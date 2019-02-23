@@ -19,6 +19,16 @@
     font-family: Pacifico;
     color: white;
     font-size: 38px;
+    margin-top: 12px;
+    display: inline-block;
+}
+
+.loginBtn {
+
+}
+
+.header {
+
 }
 
 .postings {
@@ -29,4 +39,10 @@
 
 .post {
     margin-bottom: 9px;
+}
+
+.login-button {
+    float: right;
+    margin-right: 20px;
+    margin-top: 30px;
 }
