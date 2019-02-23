@@ -1,0 +1,23 @@
+@import "../../../../../variables.scss";
+
+.login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(aquamarine, mediumaquamarine);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal {
+        border-radius: 2px;
+        box-shadow: 0 0 12px black 0.2;
+        background: white;
+        width: 100%;
+        max-width: 500px;
+        height: 100%;
+        max-height: 300px;
+    }
+}
