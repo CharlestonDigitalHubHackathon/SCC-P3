@@ -1,0 +1,15 @@
+.posting-card {
+    width: calc(100% - 21px);
+    height: 70px;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+}
+
+.post-image {
+    height: 100%;
+    img {
+        height: 100%;
+    }
+}
