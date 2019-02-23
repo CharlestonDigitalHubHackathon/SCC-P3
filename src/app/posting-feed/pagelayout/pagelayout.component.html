@@ -4,7 +4,7 @@
     <div class='brand-name'>eFarmony</div>
     <div class='postings'>
       <div *ngFor="let post of postings" class="post">
-        <app-posting-card [post]='post'></app-posting-card>
+        <app-posting-card [post]='post' (click)='expand(post)'></app-posting-card>
       </div>
 
     </div>
