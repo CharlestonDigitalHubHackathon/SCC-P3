@@ -5,11 +5,14 @@ export interface Posting {
   quantity: string;
   description: string;
   datePosted: Date;
-  postDuration: number;
+  dateEnd: Date;
   price: number;
   imageUrl: string
   farmerId: number;
+  distance: number;
+  isSelected?: boolean;
 }
+
 
 @Component({
   selector: 'app-posting-card',
@@ -24,4 +27,13 @@ export class PostingCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  get daysAvailable() {
+    return new Date(+this.post.dateEnd - +Date.now()).getDay()
+  }
+
+  get showDescription() {
+    return this.post.isSelected ? this.post.description : ''
+  }
+
 }
+
