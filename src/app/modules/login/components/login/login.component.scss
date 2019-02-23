@@ -6,10 +6,23 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient($aquamarine, $medium-aquamarine);
+    background-image: linear-gradient($medium-aquamarine, $aquamarine);
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .content {
+        position: relative;
+        top: -40px;
+    }
+
+    .brand-name {
+        text-align: center;
+        font-family: Pacifico;
+        color: white;
+        font-size: 72px;
+        margin-bottom: 20px;
+    }
 
     .modal {
         border-radius: 2px;
@@ -17,7 +30,30 @@
         background: white;
         width: 100%;
         max-width: 500px;
-        height: 100%;
-        max-height: 300px;
+        padding: 40px 20px 20px 20px;
+
+        .text-input {
+            width: 100%;
+            color: white;
+        }
+
+        button {
+            background-color: $medium-aquamarine;
+            color: white;
+        }
+
+        a {
+            color: green;
+        }
+
+        ::ng-deep .mat-form-field-flex {
+            background: #eee;
+            border-radius: 4px;
+            padding-left: 10px;
+        }
+
+        ::ng-deep .mat-form-field-wrapper {
+            margin-right: 0;
+        }
     }
 }
