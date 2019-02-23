@@ -1,0 +1,12 @@
+<div class='feed-container'>
+
+  <div class='feed'>
+    <div class='brand-name'>eFarmony</div>
+    <div class='postings'>
+      <div *ngFor="let post of postings" class="post">
+        <app-posting-card [post]='post'></app-posting-card>
+      </div>
+
+    </div>
+  </div>
+</div>
