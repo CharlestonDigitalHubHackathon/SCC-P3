@@ -3,4 +3,13 @@
   <div class="post-image">
     <img [src]='post.imageUrl'>
   </div>
+  <div class="post-summary">
+    <span class="post-quantity">
+      {{ post.quantity }} of {{ post.name }} for {{ post.price / 100 | currency }}
+    </span>
+    <br>
+    <span>
+      {{ (post.quantity / post.price) / 100 | currency }} each
+    </span>
+  </div>
 </div>

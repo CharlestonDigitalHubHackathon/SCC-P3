@@ -1,13 +1,12 @@
-
+@import '../../../variables.scss';
 .feed-container {
     width: 100%;
     height: 100%;
-    color: green;
     position: absolute;
 }
 
 .feed {
-    background: #68D89B;
+    background-image: linear-gradient($medium-aquamarine, $aquamarine);
     margin-right: auto;
     margin-left: auto;
     max-width: 880px;

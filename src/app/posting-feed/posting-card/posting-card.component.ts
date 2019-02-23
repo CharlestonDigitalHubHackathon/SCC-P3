@@ -24,4 +24,21 @@ export class PostingCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  get quantity() {
+    return this.post.quantity;
+  }
+
+  get name() {
+    return this.post.name
+  }
+
+  get price() {
+    const priceStr = `$${this.post.price}`
+    return splitValue(priceStr, priceStr.length - 2)
+  }
+
+}
+
+function splitValue(value, index) {
+  return value.substring(0, index) + "." + value.substring(index);
 }
