@@ -2,14 +2,14 @@
   <div class="content">
     <h1 class='brand-name'>eFarmony</h1>
     <div class="modal">
-      <form>
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="text-input">
-          <input matInput placeholder="User Name">
+          <input matInput placeholder="Email" formControlName="email">
         </mat-form-field>
         <mat-form-field class="text-input">
-          <input matInput placeholder="Password">
+          <input matInput type="password" placeholder="Password" formControlName="password">
         </mat-form-field>
-        <button mat-button class="text-input">Login</button>
+        <button mat-button type="submit" class="text-input">Login</button>
       </form>
       <p>Not Registered? <a href="#">Create an account.</a></p>
     </div>
