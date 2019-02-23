@@ -8,24 +8,36 @@ const app = express();
 app.use(bodyParser.json());
 
 const farmers = [
-  {email: 'john_appleseed@farms.com', password: 'appleseed'},
-  {email: 'martha_beetboxer@agriculture.com', password: 'beetboxer'}
+  {
+    id: 1,
+    email: 'john_appleseed@farms.com',
+    password: 'appleseed',
+    location: 'Charleston, SC', 
+    rating: '4',
+    name: 'John Appleseed'
+  },
+  {
+    id: 2, 
+    email: 'martha_beetboxer@agriculture.com',
+    password: 'beetboxer', 
+    location: 'Walterboro, SC', 
+    rating: '5',
+    name: 'Martha Beetboxer'
+  }
 ]
 
 // // Connect to DB
-// console.log(process.env.MONGODB_URI)
-// mongoose.connect(process.env.MONGODB_URI);
-// mongoose.Promise = bluebird;
-// mongoose.connection.on('error', (err) => {
-//   console.error(`Could not establish connection to MongoDB: ${err.message}`);
-// });
+mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
+mongoose.Promise = bluebird;
+mongoose.connection.on('error', (err) => {
+  console.error(`Could not establish connection to MongoDB: ${err.message}`);
+});
 
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
 app.post('/api/login', (req, res) => {
-  console.log(req.body);
   const fahmah = farmers.filter(farmer =>
     farmer.email === req.body.email && farmer.password === req.body.password
   );
