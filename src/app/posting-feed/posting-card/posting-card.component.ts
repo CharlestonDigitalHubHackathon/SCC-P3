@@ -5,11 +5,14 @@ export interface Posting {
   quantity: string;
   description: string;
   datePosted: Date;
-  postDuration: number;
+  dateEnd: Date;
   price: number;
   imageUrl: string
   farmerId: number;
+  distance: number;
+  isSelected?: boolean;
 }
+
 
 @Component({
   selector: 'app-posting-card',
@@ -24,21 +27,13 @@ export class PostingCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  get quantity() {
-    return this.post.quantity;
+  get daysAvailable() {
+    return new Date(+this.post.dateEnd - +Date.now()).getDay()
   }
 
-  get name() {
-    return this.post.name
-  }
-
-  get price() {
-    const priceStr = `$${this.post.price}`
-    return splitValue(priceStr, priceStr.length - 2)
+  get showDescription() {
+    return this.post.isSelected ? this.post.description : ''
   }
 
 }
 
-function splitValue(value, index) {
-  return value.substring(0, index) + "." + value.substring(index);
-}

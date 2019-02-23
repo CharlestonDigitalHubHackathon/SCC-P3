@@ -1,5 +1,5 @@
 
-<div class="posting-card">
+<div class="posting-card" [class.selected] = 'post.isSelected'>
   <div class="post-image">
     <img [src]='post.imageUrl'>
   </div>
@@ -7,9 +7,18 @@
     <span class="post-quantity">
       {{ post.quantity }} of {{ post.name }} for {{ post.price / 100 | currency }}
     </span>
-    <br>
-    <span>
-      {{ (post.quantity / post.price) / 100 | currency }} each
+    <span class="per-unit">
+      {{ (+post.quantity.split(' ')[0] / post.price) * 100 | currency }} each
     </span>
+    <br>
+    <span class='availability'>
+      Available until {{ post.dateEnd | date: 'medium'}} ({{ daysAvailable }} days left!)
+    </span>
+    <span class='description'>
+      {{ showDescription }}
+    </span>
+  </div>
+  <div class='distance'>
+    {{ post.distance }} miles
   </div>
 </div>
