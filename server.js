@@ -3,9 +3,11 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const mongoose = require('mongoose');
 const bluebird = require('bluebird');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 const farmers = [
   {
@@ -54,4 +56,3 @@ const server = app.listen(process.env.PORT || 8080, function () {
   console.log("App now running on port", port);
 });
 
-// CONTACTS API ROUTES BELOW
