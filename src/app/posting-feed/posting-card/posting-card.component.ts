@@ -11,6 +11,7 @@ export interface Posting {
   farmerId: number;
   distance: number;
   isSelected?: boolean;
+  locationUrl: string;
 }
 
 
@@ -35,5 +36,9 @@ export class PostingCardComponent implements OnInit {
     return this.post.isSelected ? this.post.description : ''
   }
 
+  openGoogleMaps() {
+    var win = window.open(this.post.locationUrl, '_blank');
+    win.focus();
+  }
 }
 

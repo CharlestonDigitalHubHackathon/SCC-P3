@@ -3,6 +3,7 @@
   <div class='feed'>
     <div class='header'>
       <div class='brand-name'>eFarmony</div>
+      <button mat-raised-button color='accent' class='login-button' (click)='navigateLogin()'>Farmers login</button>
     </div>
     <div class='postings'>
       <div *ngFor="let post of postings" class="post">
